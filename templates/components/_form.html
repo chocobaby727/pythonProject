@@ -1,0 +1,31 @@
+{% load bootstrap4 %}
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 col-sm-12">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <h5 class="my-0 font-weight-normal">{{ form_title }}</h5>
+            </div>
+
+            <div class="card-body">
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    <button type="submit" class="btn btn-primary btn-block">
+                        {{ submit_label }}
+                    </button>
+                </form>
+            </div>
+
+            <div class="card-footer text-muted text-center">
+            {% if user.is_authenticated %}
+                ログインは<a href="{% url 'login' %}">こちら</a>
+
+            {% else %}
+                <p><a href="{% url 'password_reset' %}">パスワードを忘れた場合</a></p>
+
+                <p><a href="{% url 'accounts:signup' %}">新規アカウント作成</a></p>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
