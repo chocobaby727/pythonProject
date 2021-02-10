@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+body {
+  font-family: "Kameron", "Noto Sans JP", sans-serif;
+}
+
+#global-container {
+  
+}
+
+.card-header {
+  margin-top: 0px;
+  text-align: center;
+}
+
+.horizontal {
+  margin-top: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#search-form {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  position: relative;
+  margin-top: 25px;
+}
+
+#search-field {
+  
+  position: absolute;
+}
+
+.search-keyword {
+  
+}
+

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block page_title %}テスト{% endblock %}
+
+{% block content %}
+{% include "components/_sidenav.html"%}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(document).ready(function () {
+    $(".sidenav").sidenav();
+});
+</script>
+{% endblock %}
+
+

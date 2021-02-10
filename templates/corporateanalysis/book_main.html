@@ -1,0 +1,188 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>グラフデータ</title>
+</head>
+<body>
+  <h1>貸借対照表</h1>
+<div id="container1" style="width:100%; height:1000px;"></div>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+<script>
+  var atai = 4000000
+  var ata = 5000000
+
+  // create a new chart
+
+  new Highcharts.chart('container1', {
+    chart: {
+        type: 'column'
+
+    },
+
+    title: {
+        text: ''
+    },
+
+    xAxis: {
+        categories: ['2018', '2019']
+    },
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
+        title: {
+            text: ''
+        },
+        labels: {
+            formatter: function() {
+                       return Highcharts.numberFormat(this.value, 0, ',', ',')
+                       }
+        }
+    },
+// ホバーで表示されるやつ？
+    tooltip: {
+        formatter: function () {
+            var y = Highcharts.numberFormat(this.y, 0, ',', ',');
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + y + '円';
+        }
+    },
+
+    plotOptions: {
+        column: {
+            stacking: 'normal',
+        },
+        series: {
+            pointPadding: 0,
+            borderWidth: 0,
+            shadow: false,
+        }
+    },
+
+    series: [{
+        name: '現金及び預金',
+        data: [atai, atai],
+        stack: 'Credit'
+    }, {
+        name: '売上債権',
+        data: [atai, atai],
+        stack: 'Credit'
+    }, {
+        name: '棚卸資産',
+        data: [atai, atai],
+        stack: 'Credit'
+    }, {
+        name: 'その他流動資産',
+        data: [atai, atai],
+        stack: 'Credit'
+    }, {
+        name: '固定資産',
+        data: [atai, atai],
+        stack: 'Credit'
+    },{
+        name: '有利子負債',
+        data: [ata, ata],
+        stack: 'Dedit'
+    }, {
+        name: '仕入債務',
+        data: [ata, ata],
+        stack: 'Dedit'
+    }, {
+        name: 'その他の負債',
+        data: [ata, ata],
+        stack: 'Dedit'
+    }, {
+        name: '純資産',
+        data: [ata, ata],
+        stack: 'Dedit'
+    }],
+  });
+</script>
+<h1>損益計算書</h1>
+<div id="container2" style="width:100%; height:1000px;"></div>
+<script>
+  var dataY1 = [30, 25];
+  var dataY1_2 = [5,8];
+  var dataY1_3 = [8,4];
+  var dataY2 = [52, 48];
+  new Highcharts.chart('container2', {
+
+    title: {
+        text: ''
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal',
+        },
+        series: {
+            pointPadding: 0,
+            borderWidth: 0,
+            shadow: false,
+        }
+    },
+
+    xAxis: {
+        categories: ['2018', '2019'],
+
+    },
+    yAxis: [
+            { // 1つ目のy軸設定
+                title: {
+                    text: ''
+                },
+                labels: {
+                      formatter: function() {
+                       return Highcharts.numberFormat(this.value, 0, ',', ',')
+                      }
+        }
+            },
+            { // 2つ目のy軸設定
+                title: {
+                    text: ''
+                },
+                labels: {
+                    formatter: function() {
+                              return Highcharts.numberFormat(this.value, 0, ',', ',')
+                              }
+                    },
+                opposite: true // trueの場合グラフの右側にy軸を配置する
+            }
+        ],
+    series: [
+        { // 1つ目のグラフデータ
+            name: 'data1', // グラフの名前指定
+            type: 'column', // グラフの形指定
+            data: dataY1, // グラフに使用するデータ指定
+            yAxis: 0, // y軸を指定
+            stack: '0'
+        },
+        { // 1つ目のグラフデータ
+            name: 'data1', // グラフの名前指定
+            type: 'column', // グラフの形指定
+            data: dataY1_2, // グラフに使用するデータ指定
+            yAxis: 0, // y軸を指定
+            stack: '1'
+        },
+        { // 1つ目のグラフデータ
+            name: 'data1', // グラフの名前指定
+            type: 'column', // グラフの形指定
+            data: dataY1_3, // グラフに使用するデータ指定
+            yAxis: 0, // y軸を指定
+            stack: '2'
+        },
+        { // 2つ目のグラフデータ
+            name: 'data2', // グラフの名前指定
+            type: 'line', // グラフの形指定
+            data: dataY2, // グラフに使用するデータ指定
+            yAxis: 1 // y軸を指定
+        }
+    ]
+  });
+</script>
+</body>
+</html>

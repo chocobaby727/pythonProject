@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% block title %}ユーザー登録{% endblock %}
+
+{% block content %}
+{% include "components/_form.html" with form_title="ユーザ登録" submit_label="登録"  %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'scripts/js/form-validate.js' %}"></script>
+{% endblock %}

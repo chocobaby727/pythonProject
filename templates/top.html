@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}会社チェッカーへようこそ{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'styles/loader.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include "components/_message.html" %}
+<h1>会社チェッカー</h1>
+git
+{% if user.is_authenticated %}
+ようこそ {{ user.get_username }}さん
+<p><a href="{% url 'logout' %}">ログアウト</a></p>
+<p><a href="{% url 'corporateanalysis:hello' %}">サイドバーへ</a></p>
+
+{% else %}
+<p><a href="{% url 'login' %}">ログイン画面へ</a></p>
+
+{% endif %}
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'scripts/js/vendors/pace.js' %}"></script>
+
+<script>
+$(function(){
+    setTimeout("$('.alert').fadeOut('slow')", 3000)
+})
+</script>
+{% endblock %}
+
+
