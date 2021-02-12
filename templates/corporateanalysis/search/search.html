@@ -91,11 +91,9 @@
     <script>
       const add_keyword = function (keyword) {
         let keywords = sessionStorage.getItem("keywords");
-        alert(keywords);
 
         if (keywords === null) {
           keywords = keyword + ",";
-          alert(keywords);
           sessionStorage.setItem("keywords", keywords);
         } else {
           console.log(keywords);
@@ -103,7 +101,6 @@
           keywords = keywords.split(",");
           keywords = keywords.filter((x, i, self) => self.indexOf(x) === i);
           keywords = keywords.join(",");
-          alert(keywords);
           sessionStorage.setItem("keywords", keywords);
         }
 
