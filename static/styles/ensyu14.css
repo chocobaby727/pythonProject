@@ -15,3 +15,6 @@ td {
 .hover {
     background-color: #B2D8FF;
 }
+.SimpleFrame {
+    box-shadow: 4px 4px 5px #404040;
+}

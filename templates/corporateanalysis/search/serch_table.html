@@ -1,59 +1,27 @@
 <!DOCTYPE html>
+<html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <style>
-body{
-margin: 20px; /* bodyの外側の余白を指定する */
-padding: 50px 10px 50px 10px; /* bodyの内側の余白を指定する */
-}
-h1{
-color:4D085F;
-}
-.Header {
-position: fixed; /* ヘッダーを固定する */
-top: 0; /* 上部から配置の基準位置を決める */
-left: 0; /* 左から配置の基準位置を決める */
-width: 100%; /* ヘッダーの横幅を指定する */
-height: 35px; /* ヘッダーの高さを指定する */
-padding: 10px; /* ヘッダー内側の余白を指定する(上下左右) */
-background-color: #ffffff; /* ヘッダーの背景色を指定する */
-color: #000000; /* ヘッダーのフォントの色を指定する */
-}
-.Footer {
-position: fixed; /* フッターを固定する */
-bottom: 0; /* 上部から配置の基準位置を決める */
-left: 0; /* 左から配置の基準位置を決める */
-width: 100%; /* フッターの横幅を指定する */
-height: 70px; /* フッターの高さを指定する */
-padding:10px; /* フッター内側の余白を指定する(上下左右) */
-background-color: #000000; /* フッターの背景色を指定する */
-color: #ffffff; /* フッターのフォントの色を指定する */
-}
-.Contents {
-width: 100%; /* コンテンツの横幅を指定する */
-overflow: auto; /* コンテンツの表示を自動に設定（スクロール） */
-}
-#contents   {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    max-width: 1024px;
-    min-width: 480px;
-    margin: 0 auto;
-    padding: 0 30px;
-    box-sizing: border-box;
-}
-
-
-
-</style>
-    <title>財務諸表データ</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+<title>財務諸表</title>
+<link rel="stylesheet" href="/static/styles/vendors/bootstrap-reboot.css">
+<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet">
+<script crossorigin="anonymous" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/static/styles/vendors/materialize.css">
+<link rel="stylesheet" href="/static/styles/style.css">
+<title>財務諸表データ</title>
 </head>
+<body>
+<div id="global-container">
 <ix:nonNumeric name="jpcrp_cor:BalanceSheetTextBlock" contextRef="CurrentYearDuration" escape="true">
 <h3>①【貸借対照表】</h3>
 <div>
-<table style="table-layout: fixed; width: 626.669982910156px" cellpadding="0" cellspacing="0">
+<table style="table-layout: fixed; width: 626.669982910156px" cellpadding="0" cellspacing="0" align="center">
 <colgroup>
 <col style="width: 375px" />
 <col style="width: 375px" />
@@ -2309,5 +2277,12 @@ overflow: auto; /* コンテンツの表示を自動に設定（スクロール�
 </table>
 </div>
 </ix:nonNumeric>
+</div>
+<script src="https://unpkg.com/axios@0.19.0/dist/axios.min.js"></script>
+<script src="/static/scripts/js/vendors/materialize.min.js"></script>
+<script>
+axios.defaults.xsrfCookieName = 'csrftoken';
+axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+</script>
 </body>
 </html>
