@@ -99,3 +99,51 @@ body {
   margin-top: 20px;
   cursor: pointer;
 }
+
+
+
+.category-panel {
+  max-height: 300px;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.color-red {
+  background-color: rgb(250, 171, 171);
+  color: rgba(221, 21, 54, 0.966); 
+  border: solid 2px rgba(221, 21, 54, 0.966); 
+}
+
+.color-blue {
+  background-color: rgb(220, 231, 248);
+  color: rgb(70, 81, 235); 
+  border: solid 2px rgba(70, 81, 235); 
+}
+
+.color-green {
+  background-color: rgb(227, 247, 205);
+  color: rgb(115, 206, 107); 
+  border: solid 2px rgba(115, 206, 107); 
+}
+
+.each-menu-text {
+  text-align: center;
+  display: block;
+  font-size: 6vmax;
+  letter-spacing: 0.05em;
+}
+
+.add-category{
+  text-align: right;
+}
+
+.divider {
+    height: 0;
+    overflow: hidden;
+    margin-top: 5%;
+}
+
+.fa-plus {
+  cursor: pointer;
+}
