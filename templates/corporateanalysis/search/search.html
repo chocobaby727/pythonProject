@@ -1,83 +1,77 @@
 {% extends 'base.html' %}
-
 {% block page_title %}会社検索{% endblock %}
-
 {% block content %}
 <div class="card horizontal">
-        <h2 class="card-header" id="search-card-header">会社検索</h2>
-        <div class="card-stacked">
-          <div class="card-content">
-            <div class="row" id="search-area">
-              <form id="search-form" method="get" action="#" name="search-form">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input
-                      type="text"
-                      id="search-field"
-                      placeholder="検索"
-                      id="icon_prefix2"
-                      class="materialize-textarea"
-                    />
-                  </div>
-                  <span class="fa-stack fa-2x" id="search-btn">
-                    <i class="fas fa-square fa-stack-2x"></i>
-                    <i class="fas fa-search fa-stack-1x fa-inverse"></i>
-                  </span>
-                </div>
-              </form>
+  <h2 class="card-header">会社分析</h2>
+  <div class="card-stacked">
+    <div class="card-content">
+      <div class="row" id="search-area">
+        <form id="search-form" method="get" action="#" name="search-form">
+          <div class="row">
+            <div class="input-field col s6">
+              <input
+                type="text"
+                id="search-field"
+                placeholder="検索"
+                id="icon_prefix2"
+                class="materialize-textarea"
+              />
             </div>
+            <span class="fa-stack fa-2x" id="search-btn">
+              <i class="fas fa-square fa-stack-2x"></i>
+              <i class="fas fa-search fa-stack-1x fa-inverse"></i>
+            </span>
           </div>
-        </div>
-
-          <div id="parent"></div>
-
-          <div class="hidden" id="child"></div>
-
+        </form>
       </div>
-{% endblock %}
+    </div>
+  </div>
 
+  <div id="parent"></div>
+
+  <div class="hidden" id="child"></div>
+</div>
+{% endblock %}
 {% block extra_js %}
 <script>
-const add_keyword = function (keyword) {
-        let keywords = sessionStorage.getItem("keywords");
+  const add_keyword = function (keyword) {
+    let keywords = sessionStorage.getItem("keywords");
 
-        if (keyword != "") {
-          if (keywords === null) {
-            keywords = keyword + ",";
-            sessionStorage.setItem("keywords", keywords);
-          } else {
-            console.log(keywords);
-            keywords += keyword + ",";
-            keywords = keywords.split(",");
-            keywords = keywords.filter((x, i, self) => self.indexOf(x) === i);
-            if (keywords.length > 8) {
-              keywords.shift();
-            }
-
-            temp = [...keywords];
-            keywords = keywords.join(",");
-            sessionStorage.setItem("keywords", keywords);
-            keywords = temp.reverse().join(",");
-          }
+    if (keyword != "") {
+      if (keywords === null) {
+        keywords = keyword + ",";
+        sessionStorage.setItem("keywords", keywords);
+      } else {
+        console.log(keywords);
+        keywords += keyword + ",";
+        keywords = keywords.split(",");
+        keywords = keywords.filter((x, i, self) => self.indexOf(x) === i);
+        if (keywords.length > 8) {
+          keywords.shift();
         }
 
-        return keywords;
-      };
+        temp = [...keywords];
+        keywords = keywords.join(",");
+        sessionStorage.setItem("keywords", keywords);
+        keywords = temp.reverse().join(",");
+      }
+    }
 
-      const append_keyword = function (keywords) {
-        try {
-          keywords = keywords.split(",");
-        } catch (ReferenceError) {
-          console.log("splitできないお");
-          console.log(error.message);
-        }
+    return keywords;
+  };
 
+  const append_keyword = function (keywords) {
+    try {
+      keywords = keywords.split(",");
+    } catch (ReferenceError) {
+      console.log("splitできないお");
+      console.log(error.message);
+    }
 
-
-        if (keywords && keywords != "") {
-          for (var i = 0; i < keywords.length; i++) {
-            if (keywords[i] != "") {
-              $("#parent").append(`
+    if (keywords && keywords != "") {
+      for (var i = 0; i < keywords.length; i++) {
+        if (keywords[i] != "") {
+          $("#parent").append(`
                           <div class="search-history">
                             <div class='card-action'>
                               <div class="row">
@@ -89,87 +83,87 @@ const add_keyword = function (keyword) {
                             </div>
                           </div>
                           `);
+        }
+      }
+    }
+  };
+
+  $("#search-btn").click(function () {
+    $(".search-history").remove();
+    const keyword = $("#search-field").val();
+    let keywords = add_keyword(keyword);
+    append_keyword(keywords);
+  });
+
+  var data = [
+    "ソニー株式会社",
+    "ソニーフィナンシャルホールディングス株式会社",
+    "株式会社富士通ゼネラル",
+    "富士通株式会社",
+    "富士通フロンテック株式会社",
+    "ソフトバンクグループ株式会社",
+    "ＳＢテクノロジー株式会社",
+    "ソフトバンク株式会社	",
+    "ＳＢＩアセットマネジメント株式会社 / ソフトバンク＆ＳＢＩグループ株式ファンド",
+  ];
+  var keyupStack = [];
+  $("#search-field").on("keyup", function () {
+    if ($(this).val) {
+      keyupStack.push(1);
+
+      setTimeout(
+        function () {
+          keyupStack.pop();
+          if (keyupStack.length === 0) {
+            var buf = ".*" + $(this).val().replace(/(.)/g, "$1.*");
+            var reg = new RegExp(buf);
+
+            var filteredLists = $.grep(
+              data,
+              function (d) {
+                return reg.test(d);
+              }.bind(this)
+            );
+
+            const pattern = $("#search-field").val();
+
+            let result = filteredLists.filter(function (item) {
+              if (item.includes(pattern) && pattern) {
+                return item;
+              }
+            });
+
+            if (result) {
+              createRow(result);
             }
           }
-        }
-      };
+        }.bind(this),
+        300
+      );
+    }
 
-      $("#search-btn").click(function () {
-        $(".search-history").remove();
-        const keyword = $("#search-field").val();
-        let keywords = add_keyword(keyword);
-        append_keyword(keywords);
-      });
+    const text = $("#search-field").val();
 
-      var data = [
-        "ソニー株式会社",
-        "ソニーフィナンシャルホールディングス株式会社",
-        "株式会社富士通ゼネラル",
-        "富士通株式会社",
-        "富士通フロンテック株式会社",
-        "ソフトバンクグループ株式会社",
-        "ＳＢテクノロジー株式会社",
-        "ソフトバンク株式会社	",
-        "ＳＢＩアセットマネジメント株式会社 / ソフトバンク＆ＳＢＩグループ株式ファンド",
-      ];
-      var keyupStack = [];
-      $("#search-field").on("keyup", function () {
-        if ($(this).val) {
-          keyupStack.push(1);
+    if (!text) {
+      $("#child").addClass("hidden");
+    } else {
+      $("#child").removeClass("hidden");
+    }
+  });
 
-          setTimeout(
-            function () {
-              keyupStack.pop();
-              if (keyupStack.length === 0) {
-                var buf = ".*" + $(this).val().replace(/(.)/g, "$1.*");
-                var reg = new RegExp(buf);
+  $("#search-field").click(function () {
+    const keywords = add_keyword("");
+    if (keywords) {
+      $(".search-history").remove();
+      append_keyword(keywords);
+    }
+  });
 
-                var filteredLists = $.grep(
-                  data,
-                  function (d) {
-                    return reg.test(d);
-                  }.bind(this)
-                );
-
-                const pattern = $("#search-field").val();
-
-                let result = filteredLists.filter(function (item) {
-                  if (item.includes(pattern) && pattern) {
-                    return item;
-                  }
-                });
-
-                if (result) {
-                  createRow(result);
-                }
-              }
-            }.bind(this),
-            300
-          );
-        }
-
-        const text = $("#search-field").val();
-
-        if (!text) {
-          $("#child").addClass("hidden");
-        } else {
-          $("#child").removeClass("hidden");
-        }
-      });
-
-      $("#search-field").click(function () {
-        const keywords = add_keyword("");
-        if (keywords) {
-          $(".search-history").remove();
-          append_keyword(keywords);
-        }
-      });
-
-      var createRow = function (lists) {
-        var list = $("#child");
-        $("#child").empty();
-        $.each(lists, function (i, v) {
-          var item = $("#child").append(`
+  var createRow = function (lists) {
+    var list = $("#child");
+    $("#child").empty();
+    $.each(lists, function (i, v) {
+      var item = $("#child").append(`
                           <div class="search-history">
                             <div class='card-action'>
                               <div class="row">
@@ -180,23 +174,21 @@ const add_keyword = function (keyword) {
                             </div>
                           </div>
                           `);
-          list.append(item);
-        });
-      };
+      list.append(item);
+    });
+  };
 
-      $("#child").on("click", function (e) {
-        add_keyword(e.target.innerText);
-        window.location.href =
-          "{% url 'login' %}";
-      });
+  $("#child").on("click", function (e) {
+    add_keyword(e.target.innerText);
+    window.location.href = "{% url 'login' %}";
+  });
 
-      $("#parent").on("click", function () {
-        window.location.href =
-          "{% url 'login' %}"
-      });
+  $("#parent").on("click", function () {
+    window.location.href = "{% url 'login' %}";
+  });
 
-      $(".target-link black-text").click(function () {
-        alert($(this).val());
-      });
+  $(".target-link black-text").click(function () {
+    alert($(this).val());
+  });
 </script>
 {% endblock %}

@@ -8,7 +8,7 @@ body {
   width: 100%;
 }
 
-#search-card-header {
+.card-header {
   margin-top: 0px;
   text-align: center;
 }
