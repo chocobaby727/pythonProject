@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {# ---Google Icon Font --- #}
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP:wght@500&display=swap"
+        rel="stylesheet">
 
     {# --- fontawesome --- #}
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -23,11 +25,13 @@
     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
     {% block extra_css %}{% endblock %}
 </head>
+
 <body>
     <div id="global-container">
         {% block content %}
         <h1>コンテンツがありません</h1>
         {% endblock %}
+        {% include "components/_bottom-app-bar.html" %}
     </div>
 
     {# --- js --- #}
@@ -35,9 +39,10 @@
     <script src="{% static 'scripts/js/vendors/materialize.min.js' %}"></script>
 
     <script>
-    axios.defaults.xsrfCookieName = 'csrftoken';
-    axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+        axios.defaults.xsrfCookieName = 'csrftoken';
+        axios.defaults.xsrfHeaderName = 'X-CSRFToken';
     </script>
     {% block extra_js %} {% endblock %}
 </body>
+
 </html>
