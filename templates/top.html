@@ -15,7 +15,7 @@ git
 ようこそ {{ user.get_username }}さん
 <p><a href="{% url 'logout' %}">ログアウト</a></p>
 <p><a href="{% url 'corporateanalysis:hello' %}">サイドバーへ</a></p>
-<p><a href="{% url 'company-info' %}">会社情報表示画面</a></p>
+<p><a href="{% url 'corporateanalysis:info' %}">会社情報表示画面</a></p>
 
 {% else %}
 <p><a href="{% url 'login' %}">ログイン画面へ</a></p>
