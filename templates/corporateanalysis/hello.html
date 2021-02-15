@@ -1,17 +1,20 @@
 {% extends 'base.html' %}
 
-{% block page_title %}テスト{% endblock %}
+{% block page_title %}
+{% comment %} ページのタイトル {% endcomment %}
+{% endblock %}
+
+{% block extra_css %}
+{% comment %} 追加したいCSS {% endcomment %}
+{% endblock %}
 
 {% block content %}
-{% include "components/_sidenav.html"%}
+{% comment %} メインコンテンツ {% endcomment %}
+{% include "components/_header.html" with header_title="ログイン" %}
 {% endblock %}
 
 {% block extra_js %}
-<script>
-$(document).ready(function () {
-    $(".sidenav").sidenav();
-});
-</script>
+{% comment %} 追加したいjavascript {% endcomment %}
 {% endblock %}
 
 
