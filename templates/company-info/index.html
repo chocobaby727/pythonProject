@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}ログイン{% endblock %}
+{% block content %}
+<div>
+  <div class="company-info__title-container">
+    {% load static %}
+    <img class="company-info__title-image" src="{% static 'img/informationblue.png' %}" />
+    <h3 class="company-info__title-letters">会社情報</h3>
+  </div>
+
+  <table class="striped">
+    <tbody>
+      <tr>
+        <td>会社名</td>
+        <td>ソニー株式会社</td>
+      </tr>
+      <tr>
+        <td>代表者の役職氏名</td>
+        <td>代表執行役　吉田憲一郎</td>
+      </tr>
+      <tr>
+        <td>本店の所在の場所</td>
+        <td>東京都港区港南１丁目７番１号</td>
+      </tr>
+      <tr>
+        <td>電話番号</td>
+        <td>03-6748-2111（代表）</td>
+      </tr>
+      <tr>
+        <td>従業員数　2020年３月</td>
+        <td>111,700</td>
+      </tr>
+      <tr>
+        <td>売上高及び営業収入<br />2020年３月決算</td>
+        <td>8,259,885　百万円</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .company-info__title-container {
+    display: flex;
+    margin: 32px auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .company-info__title-image {
+    width: 64px;
+    height: 64px;
+    margin-right: 16px;
+  }
+
+  .company-info__title-letters {
+    margin: 0;
+  }
+</style>
+{% endblock %}
