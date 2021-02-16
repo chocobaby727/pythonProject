@@ -12,5 +12,9 @@ def company_info(request):
     return render(request, template_name='company-info/index.html')
 
 
-def corporateanalysis(request):
+def search(request):
     return render(request, template_name='corporateanalysis/search/search.html')
+
+
+def comparison(request):
+    return render(request, template_name='corporateanalysis/comparison/comparison_menu.html')

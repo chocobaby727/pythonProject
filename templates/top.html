@@ -21,6 +21,8 @@ git
 {% else %}
 <p><a href="{% url 'login' %}">ログイン画面へ</a></p>
 <p><a href="{% url 'corporateanalysis:hello' %}">headerサンプル</a></p>
+<p><a href="{% url 'corporateanalysis:search' %}">会社検索</a></p>
+<p><a href="{% url 'corporateanalysis:comparison_menu' %}">比較開始画面</a></p>
 {% endif %}
 
 {% endblock %}

@@ -1,0 +1,115 @@
+{% extends 'base.html' %} 
+{% block page_title %} 
+比較分析開始 
+{% endblock %}
+{%block content %} 
+{% include "components/_header.html" with header_title="比較分析" %}
+<div class="section">
+  <h5 class="add-category">
+    カテゴリー追加
+    <i class="modal-trigger fas fa-plus" data-target="add-category-modal"></i>
+  </h5>
+</div>
+
+<div id="add-category-modal" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>カテゴリー追加</h4>
+    <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Color</a>
+    <ul id="dropdown1" class="dropdown-content">
+          <li class="collection-item">blue</li>
+          <li class="collection-item active">green</li>
+          <li class="collection-item">red</li>
+    </ul>
+
+    <div class="input-field col s12">
+      <textarea class="materialize-textarea"></textarea>
+      <label for="icon_prefix2">category</label>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <a
+      href="#!"
+      class="modal-close waves-effect waves-green btn-flat"
+      id="add-button"
+      >追加</a
+    >
+  </div>
+</div>
+
+<div class="one-section">
+  <div class="divider"></div>
+  <div class="section">
+    <div class="row">
+      <div class="col s12 m5">
+        <div class="card-panel category-panel color-blue">
+          <span class="each-menu-text">IT </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="one-section">
+  <div class="divider"></div>
+  <div class="section">
+    <div class="row">
+      <div class="col s12 m5">
+        <div class="card-panel category-panel color-green">
+          <span class="each-menu-text">サービス </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="one-section">
+  <div class="divider"></div>
+  <div class="section">
+    <div class="row">
+      <div class="col s12 m5">
+        <div class="card-panel category-panel color-red">
+          <span class="each-menu-text">個人的10選 </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} 
+{% block extra_js %}
+<script>
+  $(document).ready(function () {
+    $(".modal").modal();
+  });
+
+  $(".card-panel").on("click", function () {
+    window.location.href = "{% url 'login' %}";
+  });
+
+  $("#add-button").click(function () {
+    const active = $('li[class="collection-item active"]');
+    const color = $(active).text();
+    const category = $('.materialize-textarea').val();
+    $('.materialize-textarea').val('');
+    const section = $("#global-container > .one-section:last").clone(true);
+    section.insertAfter("#global-container > .one-section:last");
+    const target = $("#global-container > .one-section:last");
+    $(".each-menu-text", target).text(category);
+
+    const panel_color = 'card-panel category-panel color-' + color;
+    $(".each-menu-text", target).parent("div").attr('class', panel_color);
+  });
+
+  $(".collection-item").click(function () {
+    const items = $(".collection-item");
+
+    for(let i = 0; i < items.length; i++) {
+      $(items[i]).attr('class', 'collection-item');
+    }
+
+    $(this).attr('class', 'collection-item active');
+  });
+
+  $(".dropdown-trigger").dropdown();
+</script>
+{% endblock %}
