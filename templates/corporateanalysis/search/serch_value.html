@@ -1,5 +1,4 @@
-
-
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +36,11 @@
 </script>
 
 <body>
+<div class="company-info__title-container">
+    {% load static %}
+    <img class="company-info__title-image" src="{% static 'img/valueorange.png' %}" />
+    <h3 class="company-info__title-letters">数値データ</h3>
+  </div>
 <div id="global-container">
     <table cellpadding="0" cellspacing="0" class="table table-bordered SimpleFrame">
         <tr>
@@ -90,12 +94,12 @@
 
         <tr>
             <td class="aka">売上高増加率　　　　　　　　</td>
-            <td class="aka rt">－4.7％</td>
+            <td class="aka rt">-4.7％</td>
         </tr>
 
 		<tr>
             <td class="aka">営業利益増加率</td>
-            <td class="aka rt">－5.5％</td>
+            <td class="aka rt">-5.5％</td>
         </tr>
 
         <tr>
@@ -105,12 +109,12 @@
 
         <tr>
             <td class="aka">純利益増加率</td>
-            <td class="aka rt">－36.5％</td>
+            <td class="aka rt">-36.5％</td>
         </tr>
 
 		<tr>
             <td class="aka">従業員増加率</td>
-            <td class="aka rt">－2.4％</td>
+            <td class="aka rt">-2.4％</td>
         </tr>
 
         <tr>
@@ -127,4 +131,24 @@
     axios.defaults.xsrfHeaderName = 'X-CSRFToken';
     </script>
 </body>
+<style>
+  .company-info__title-container {
+    display: flex;
+    margin: 32px auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .company-info__title-image {
+    width: 64px;
+    height: 64px;
+    margin-right: 16px;
+  }
+
+  .company-info__title-letters {
+    margin: 0;
+    color: #7F4C0A;
+  }
+</style>
+{% endblock %}
 </html>
