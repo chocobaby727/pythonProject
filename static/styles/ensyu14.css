@@ -1,0 +1,24 @@
+th {
+    background: #000000;
+    color: white;
+    text-align: center;
+}
+
+th,
+td {
+    padding: 5px;
+}
+
+.even {
+    background-color: #F2F2F2;
+}
+
+.hover {
+    background-color: #B2D8FF;
+}
+
+.aka { background-color: #FF9999; }
+
+.ao { background-color: #00FFFF; }
+
+.rt { text-align: right;}

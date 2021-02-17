@@ -1,0 +1,128 @@
+input.input1 {
+  text-align: center;
+    /* 文字サイズを1.4emに指定 */
+    font-size: 1.4em;
+
+    /* 文字の太さをboldに指定 */
+    font-weight: bold;
+
+    /* 縦方向に10px、
+     * 横方向に30pxの余白を指定 */
+    padding: 10px 30px;
+
+    /* 背景色を濃い青色に指定 */
+    background-color: #003399;
+
+    /* 文字色を白色に指定 */
+    color: #fff;
+
+    /* ボーダーをなくす */
+    border-style: none;
+}
+
+input.input1:hover {
+  text-align: center;
+    /* 背景色を明るい青色に指定 */
+    background-color: #24d;
+
+    /* 文字色を白色に指定 */
+    color: #fff;
+}
+
+.inner{
+  text-align: center;
+}
+
+ul {
+  text-align: center;
+  list-style: none;
+
+  font-size: 35px;
+}
+
+span{
+  color: #FFCC00;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+/* 背景用*/
+body {
+  padding: 30px;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.btn-border-shadow {
+  padding: calc(1.5rem - 12px) 3rem 1.5rem;
+
+  background: #fff;
+}
+
+a.btn-border-shadow:before {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+
+  width: 100%;
+  height: 100%;
+
+  content: "";
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  border: 3px solid #000;
+  border-radius: 0.5rem;
+}
+
+a.btn-border-shadow:hover {
+  padding: calc(1.5rem - 6px) 3rem;
+}
+
+a.btn-border-shadow:hover:before {
+  top: 0;
+  left: 0;
+}
+
+a.btn-border-shadow--color2 {
+  border-radius: 100vh;
+}
+
+a.btn-border-shadow--color2:before {
+  border-radius: 100vh;
+  -webkit-box-shadow: 3px 3px 0 #78e5e5;
+  box-shadow: 3px 3px 0 #78e5e5;
+}

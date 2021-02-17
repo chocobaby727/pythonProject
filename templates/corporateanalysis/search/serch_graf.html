@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+<title>グラフデータ</title>
+<link rel="stylesheet" href="../../../static/styles/vendors/bootstrap-reboot.css">
+<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet">
+<script crossorigin="anonymous" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../../static/styles/vendors/materialize.css">
+<link rel="stylesheet" href="../../../static/styles/style.css">
+</head>
+<body>
+<div id="global-container">
+  <CENTER><h4>貸借対照表</h4></CENTER> 
+<div id="container1" style="width:100%; height:500px;"></div>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+<script>
+  var atai_1 = 441082
+  var ata_1 = 436303
+  var atai_2 = 72051
+  var ata_2 = 68234
+  var atai_3 = 16599
+  var ata_3 = 13259
+  var atai_4 = 245409
+  var ata_4 = 116894
+  var atai_5 = 404822
+  var ata_5 = 568373
+  var atai_6 = 2591685
+  var ata_6 = 2706537
+  var atai_7 = 2712185
+  var ata_7 = 2874008
+
+  // create a new chart
+
+  new Highcharts.chart('container1', {
+    chart: {
+        type: 'column'
+
+    },
+
+    title: {
+        text: ''
+    },
+
+    xAxis: {
+        categories: ['2018年度', '2019年度']
+    },
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
+        title: {
+            text: ''
+        },
+        labels: {
+            formatter: function() {
+                       return Highcharts.numberFormat(this.value, 0, ',', ',') 
+                       }
+        }
+    },
+// ホバーで表示されるやつ？
+    tooltip: {
+        formatter: function () {
+            var y = Highcharts.numberFormat(this.y, 0, ',', ',');
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + y + '円';
+        }
+    },
+
+    plotOptions: {
+        column: {
+            stacking: 'normal',
+        },
+        series: {
+            pointPadding: 0,
+            borderWidth: 0,
+            shadow: false,
+        }
+    },
+
+    series: [{
+        name: '流動資産合計',
+        data: [atai_1, ata_1],
+        stack: 'Credit'
+    },{
+        name: '有形固定資産合計',
+        data: [atai_2, ata_2],
+        stack: 'Credit'
+    },{
+        name: '無形固定資産合計',
+        data: [atai_3, ata_3],
+        stack: 'Credit'
+    },{
+        name: '投資その他の資産合計',
+        data: [atai_7, ata_7],
+        stack: 'Credit'
+    },{
+        name: '流動負債合計',
+        data: [atai_4, ata_4],
+        stack: 'Dedit'
+    },{
+        name: '固定負債合計',
+        data: [atai_5, ata_5],
+        stack: 'Dedit'
+    },{
+        name: '純資産合計',
+        data: [atai_6, ata_6],
+        stack: 'Dedit'
+    }],
+  });
+</script>
+
+<CENTER> <h4>損益前年比</h4></CENTER>
+<div id="container2" style="width:100%; height:500px;"></div>
+<script>
+  var dataY1 = [173314, 158662];
+  var dataY1_2 = [15127,390987];
+  var dataY2 = [10.6, 7.0];
+  new Highcharts.chart('container2', {
+    
+    title: {
+        text: ''
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal',
+        },
+        series: {
+            pointPadding: 0,
+            borderWidth: 0,
+            shadow: false,
+        }
+    },
+
+    xAxis: {
+        categories: ['2018年度', '2019年度'],
+        
+    },
+    yAxis: [
+            { // 1つ目のy軸設定
+                title: {
+                    text: ''
+                },
+                labels: {
+                      formatter: function() {
+                       return Highcharts.numberFormat(this.value, 0, ',', ',') 
+                      }
+        }
+            },
+            { // 2つ目のy軸設定
+                min:0, //y軸最小値
+                max:20, //y軸最大値
+                title: {
+                    text: ''
+                },
+                labels: {
+                    formatter: function() {
+                              return Highcharts.numberFormat(this.value, 0, ',', ',') +'%'
+                              }
+                    },
+                opposite: true // trueの場合グラフの右側にy軸を配置する
+            }
+        ],
+    series: [
+        { // 1つ目のグラフデータ
+            name: '売上高', // グラフの名前指定
+            type: 'column', // グラフの形指定
+            data: dataY1, // グラフに使用するデータ指定
+            yAxis: 0, // y軸を指定
+            stack: '0'
+        },
+        { // 1つ目のグラフデータ
+            name: '当期純利益', // グラフの名前指定
+            type: 'column', // グラフの形指定
+            data: dataY1_2, // グラフに使用するデータ指定
+            yAxis: 0, // y軸を指定
+            stack: '1'
+        },
+        { // 2つ目のグラフデータ
+            name: '純利益率', // グラフの名前指定
+            type: 'line', // グラフの形指定
+            data: dataY2, // グラフに使用するデータ指定
+            yAxis: 1 // y軸を指定
+        }
+    ]   
+  });
+</script>
+</div>
+<script src="https://unpkg.com/axios@0.19.0/dist/axios.min.js"></script>
+<script src="/static/scripts/js/vendors/materialize.min.js"></script>
+<script>
+axios.defaults.xsrfCookieName = 'csrftoken';
+axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+</script>
+</body>
+</html>
