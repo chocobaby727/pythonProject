@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4c3c791-7d0b-4820-9d1f-a7006cfd215a" name="デフォルト変更リスト" comment="">
-      <change afterPath="$PROJECT_DIR$/static/img/book_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/book_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/graf_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/graf_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/grafgreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/informationblue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/serch_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/serch_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/star_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/star_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/tablepaple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/valueorange.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/company-info/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/components/_footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/components/_header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/corporateanalysis/search/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/corporateanalysis/search/search_main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/corporateanalysis/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/corporateanalysis/search_main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/corporateanalysis/search/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/corporateanalysis/search/search.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +32,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/corporateanalysis" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RunManager">

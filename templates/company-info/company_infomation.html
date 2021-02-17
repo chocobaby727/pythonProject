@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+ {% block page_title %} 
+ 会社分析 {% endblock %} 
+ {%block content %}
+<div class="card horizontal">
+  <span class="back-text"><i class="fas fa-arrow-left"></i> 戻る</span>
+  <h2 class="card-header">会社分析</h2>
+</div>
+
+<div class="wrap around collection">
+  <div class="collection-item">
+    <div class="content">
+      <p class="float-text" id="company-name">
+        <i class="far fa-star" id="star-color"></i>ソニー株式会社
+      </p>
+    </div>
+  </div>
+
+  <div class="collection-item cursor-pointer">
+    <div class="content">
+      <span class="infomation-icon" id="overview" />
+    </div>
+    <p class="float-text company" id="overview-color">会社概要</p>
+  </div>
+
+  <div class="collection-item cursor-pointer">
+    <div class="content"><span class="infomation-icon" id="graph" /></div>
+    <p class="float-text company" id="graph-color">グラフデータ</p>
+  </div>
+
+  <div class="collection-item cursor-pointer">
+    <div class="content">
+      <span class="infomation-icon" id="number" />
+    </div>
+    <p class="float-text company" id="number-color">数値データ</p>
+  </div>
+
+  <div class="collection-item cursor-pointer">
+    <div class="content">
+      <span class="infomation-icon" id="statements" />
+    </div>
+    <p class="float-text company" id="statements-color">財務諸表</p>
+  </div>
+</div>
+
+<h5 class="add-category" id="buttom">
+  カテゴリ追加
+  <i class="modal-trigger fas fa-plus" data-target="modal1"></i>
+</h5>
+
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+    <h4>カテゴリ追加</h4>
+    <div class="input-field col s12">
+      <select>
+        <option value="" disabled selected>選択して下さい</option>
+        <option value="1">IT</option>
+        <option value="2">サービス</option>
+        <option value="3">個人的10選</option>
+      </select>
+      <label>カテゴリ</label>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" id="add" class="modal-close waves-effect waves-green btn-flat"
+      >追加</a
+    >
+  </div>
+</div>
+
+{% endblock %} 
+{% block extra_js %}
+
+<script>
+  $(document).ready(function () {
+    $("select").formSelect();
+  });
+
+  $(".collection-item")
+    .mouseover(function () {
+      const text = $(this, "p").text().trim();
+      let color = "";
+
+      if (text == "会社概要") {
+        color = "blue";
+      } else if (text == "グラフデータ") {
+        color = "green";
+      } else if (text == "数値データ") {
+        color = "orange";
+      } else if (text == "財務諸表") {
+        color = "purple";
+      }
+      $(this).addClass(color);
+    })
+    .mouseout(function (color) {
+      $(this).removeClass("orange");
+      $(this).removeClass("blue");
+      $(this).removeClass("green");
+      $(this).removeClass("purple");
+    });
+
+  $(".collection-item").click(function () {
+    const text = $(this, "p").text().trim();
+    let url = "";
+
+    if (text != "ソニー株式会社") {
+      if (text == "会社概要") {
+        url = "#";
+      } else if (text == "グラフデータ") {
+        url = "#";
+      } else if (text == "数値データ") {
+        url = "#";
+      } else if (text == "財務諸表") {
+        url = "#";
+      }
+      window.location.href = url;
+    }
+  });
+
+  $(".back-text").click(function () {
+    window.location.href = "#";
+  });
+
+  $("#star-color").click(function () {
+    const star_color = $(this).attr("class");
+
+    if (star_color == "far fa-star") {
+      $(this).attr("class", "fas fa-star");
+      M.toast({ html: "お気に入りに登録しました", classes: "rounded" });
+    } else {
+      $(this).attr("class", "far fa-star");
+      M.toast({ html: "お気に入りから外しました", classes: "rounded" });
+    }
+  });
+
+  $("#add").click(function () {
+    const company_name = $("#company-name").text();
+
+    M.toast({
+      html: `${company_name}をカテゴリに追加しました`,
+      classes: "rounded",
+    });
+  });
+
+  $(document).ready(function () {
+    $(".modal").modal();
+  });
+</script>
+{% endblock %}
