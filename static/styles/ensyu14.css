@@ -1,6 +1,7 @@
 th {
     background: #000000;
     color: white;
+    text-align: center;
 }
 
 th,
@@ -15,6 +16,9 @@ td {
 .hover {
     background-color: #B2D8FF;
 }
-.SimpleFrame {
-    box-shadow: 4px 4px 5px #404040;
-}
+
+.aka { background-color: #FF9999; }
+
+.ao { background-color: #00FFFF; }
+
+.rt { text-align: right;}
