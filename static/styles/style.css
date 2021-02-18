@@ -19,6 +19,17 @@ body {
   margin: 0 auto;
 }
 
+.back-text {
+  font-size: 15px;
+  position: absolute;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.fa-arrow-left {
+  color: rgb(74, 132, 240);
+}
+
 #search-form {
   width: 80%;
   margin: 0 auto;
@@ -175,3 +186,105 @@ textarea.materialize-textarea {
   transition: box-shadow 0.3s, border 0.3s;
   transition: box-shadow 0.3s, border 0.3s, -webkit-box-shadow 0.3s;
 }
+
+
+.hoge {
+  position: relative;
+}
+
+.infomation-icon {
+  position: absolute;
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  margin-left: 35px;
+  background-position:center center;
+  background-repeat:no-repeat;
+  border-radius:50%;
+  
+}
+
+
+#overview {
+  background-image: url(/static/img/informationblue.png);
+}
+
+#graph {
+  background-image: url(/static/img/grafgreen.png);
+}
+
+#number {
+  background-image: url(/static/img/valueorange.png);
+}
+
+#statements {
+  background-image: url(/static/img/tablepaple.png);
+}
+
+#star-color {
+  color: #FFFF00;
+}
+
+#overview-color {
+  color: #0A3977;
+}
+
+.overview-background-color {
+  color: rgba(208, 230, 255, 0.959);
+}
+
+#graph-color {
+  color: #155D18;
+}
+
+#number-color {
+  color: #7F4C0A;
+}
+
+#statements-color {
+  color: #4D085F;
+}
+
+#company-name {
+  padding-top: 23px;
+  font-size: 35px;
+  padding-left: 15px;
+}
+
+.company {
+  margin-left: 105px;
+  padding-top: 23px;
+  letter-spacing: 3px;
+  font-size: 30px;
+}
+
+.wrap {
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  flex-flow: column;
+  height:420px;
+  width: 100%;
+}
+
+.around {
+  -ms-flex-pack:distribute;
+  justify-content:space-around;
+}
+
+.cursor-pointer {
+  height: 90px;
+  cursor: pointer;
+}
+
+.collection {
+  margin:0;
+}
+
+#buttom {
+  display: block;
+  text-align: center;
+}
+
+

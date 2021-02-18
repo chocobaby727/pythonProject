@@ -180,11 +180,11 @@
 
   $("#child").on("click", function (e) {
     add_keyword(e.target.innerText);
-    window.location.href = "{% url 'login' %}";
+    window.location.href = "../../../templates/company-info/company_infomation.html";
   });
 
   $("#parent").on("click", function () {
-    window.location.href = "{% url 'login' %}";
+    window.location.href = "../../company-info/company_infomation.html";
   });
 
   $(".target-link black-text").click(function () {
