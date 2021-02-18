@@ -30,7 +30,10 @@
   <div id="parent"></div>
 
   <div class="hidden" id="child"></div>
+
 </div>
+
+{% include "components/_bottom-app-bar.html" %}
 {% endblock %}
 {% block extra_js %}
 <script>
@@ -180,11 +183,11 @@
 
   $("#child").on("click", function (e) {
     add_keyword(e.target.innerText);
-    window.location.href = "{% url 'login' %}";
+    window.location.href = "{% url 'corporateanalysis:company_information' %}";
   });
 
   $("#parent").on("click", function () {
-    window.location.href = "{% url 'login' %}";
+    window.location.href = "{% url 'corporateanalysis:company_information' %}";
   });
 
   $(".target-link black-text").click(function () {

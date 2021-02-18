@@ -75,6 +75,8 @@
     </div>
   </div>
 </div>
+
+{% include "components/_bottom-app-bar.html" %}
 {% endblock %} 
 {% block extra_js %}
 <script>
@@ -83,7 +85,7 @@
   });
 
   $(".card-panel").on("click", function () {
-    window.location.href = "{% url 'login' %}";
+    window.location.href = "{% url 'corporateanalysis:comparison_start' %}";
   });
 
   $("#add-button").click(function () {

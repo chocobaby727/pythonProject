@@ -1,56 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4c3c791-7d0b-4820-9d1f-a7006cfd215a" name="デフォルト変更リスト" comment="">
-      <change afterPath="$PROJECT_DIR$/static/img/book_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/book_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/graf_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/graf_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/grafgreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/informationblue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/serch_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/serch_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/star_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/star_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/tablepaple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/valueorange.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/company-info/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/components/_footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/components/_header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/corporateanalysis/search/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/corporateanalysis/search/search_main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/corporateanalysis/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/corporateanalysis/search_main.html" beforeDir="false" />
+    <list default="true" id="091939c1-9922-4e81-9f2c-cd4954b57bab" name="デフォルト変更リスト" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pythonProject1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company-info/company_infomation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/corporateanalysis/search/company_infomation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company-info/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/corporateanalysis/search/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/corporateanalysis/book_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/corporateanalysis/book/book_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/corporateanalysis/hikaku_kekka.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/corporateanalysis/comparison/hikaku_kekka.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/corporateanalysis/hikaku_start.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/corporateanalysis/comparison/hikaku_start.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/corporateanalysis/search/search_main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/corporateanalysis/search/serch_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/corporateanalysis/search/serch_table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/corporateanalysis/star_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/favorite/star_main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1nxxH4bew9S7u70N6nUpyx1UUAl" />
+  <component name="ProjectId" id="1oe1uwP1a7CIi91xTYJ46QQVRS7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/accounts" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
+=======
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\s20192058\PycharmProjects\pythonProject1\templates\favorite" />
+      <recent name="C:\Users\s20192058\PycharmProjects\pythonProject1\templates\corporateanalysis\book" />
+      <recent name="C:\Users\s20192058\PycharmProjects\pythonProject1\templates\corporateanalysis\comparison" />
+      <recent name="C:\Users\s20192058\PycharmProjects\pythonProject1\templates\corporateanalysis\search" />
+      <recent name="C:\Users\s20192058\PycharmProjects\pythonProject1\templates\corporateanalysis" />
+    </key>
+>>>>>>> d92b9993383bb2f6f7ca0779f7b45d6febdaee2a
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -86,6 +82,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

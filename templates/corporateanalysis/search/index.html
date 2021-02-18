@@ -1,13 +1,24 @@
 {% extends "base.html" %}
-{% block title %}ログイン{% endblock %}
+{% block title %}会社情報{% endblock %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'styles/ensyu14.css' %}">
+{% endblock %}
 {% block content %}
-<div>
+
+<div class="card horizontal">
+  <span class="back-text"><i class="fas fa-arrow-left"></i> 戻る</span>
+  <h2 class="card-header"><p class="float-text" id="company-name">
+        ソニー株式会社<i class="far fa-star" id="star-color"></i>
+      </p></h2>
+
   <div class="company-info__title-container">
     {% load static %}
     <img class="company-info__title-image" src="{% static 'img/informationblue.png' %}" />
     <h3 class="company-info__title-letters">会社情報</h3>
   </div>
-
+</div>
   <table class="striped">
     <tbody>
       <tr>
@@ -37,7 +48,7 @@
     </tbody>
   </table>
 </div>
-
+{% include "components/_bottom-app-bar.html" %}
 <style>
   .company-info__title-container {
     display: flex;
@@ -54,6 +65,14 @@
 
   .company-info__title-letters {
     margin: 0;
+    color: #0A3977;
   }
 </style>
+{% block extra_js %}
+<script>
+$(".back-text").click(function () {
+    window.location.href = "{% url 'corporateanalysis:search' %}";
+  });
+</script>
+{% endblock %}
 {% endblock %}

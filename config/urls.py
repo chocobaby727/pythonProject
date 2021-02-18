@@ -5,10 +5,14 @@ from django.contrib.auth.decorators import login_required
 from django.urls import path, include
 from django.views.generic import TemplateView
 
+from corporateanalysis.views import search
+
 top_view = TemplateView.as_view(template_name="top.html")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('', search, name='search'),
 
     path('', top_view, name='top'),
     path('corporateanalysis/', include('corporateanalysis.urls'), name='corporateanalysis'),

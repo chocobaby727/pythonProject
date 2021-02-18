@@ -1,11 +1,7 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
-<<<<<<< HEAD
     <inspection_tool class="PyPep8Inspection" enabled="true" level="ERROR" enabled_by_default="true">
-=======
-    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
->>>>>>> d92b9993383bb2f6f7ca0779f7b45d6febdaee2a
       <option name="ignoredErrors">
         <list>
           <option value="W29" />
@@ -36,7 +32,6 @@
           <option value="E501" />
           <option value="W29" />
           <option value="E501" />
-<<<<<<< HEAD
           <option value="W29" />
           <option value="E501" />
           <option value="W29" />
@@ -154,12 +149,6 @@
           <option value="E501" />
           <option value="W29" />
           <option value="E501" />
-          <option value="W29" />
-          <option value="E501" />
-          <option value="W29" />
-          <option value="E501" />
-          <option value="W29" />
-          <option value="E501" />
         </list>
       </option>
     </inspection_tool>
@@ -168,8 +157,6 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="accounts.views.SginupForm" />
-=======
->>>>>>> d92b9993383bb2f6f7ca0779f7b45d6febdaee2a
         </list>
       </option>
     </inspection_tool>

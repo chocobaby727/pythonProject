@@ -1,0 +1,16 @@
+a.cp_btn {
+	display: block;
+	width: 250px;
+    height: 120px;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	color: #000000;
+	border: 2px solid #000000;
+	border-radius: 3px;
+	transition: .4s;
+}
+a.cp_btn:hover {
+	background: #000000;
+	color: #fff;
+}
