@@ -9,7 +9,7 @@ from .base import *
 # Security settings #
 #####################
 
-DEBUG = True
+DEBUG = False
 
 # SECRET_KEY = 'secret-key'
 
