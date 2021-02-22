@@ -1,28 +1,21 @@
 {% extends 'base.html' %}
 {% block page_title %}会社検索{% endblock %}
+{% block extra_css %}
+<style>ul.fda li:nth-child(1){background: #111;}</style>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock %}
 {% block content %}
 <div class="card horizontal">
   <h2 class="card-header">会社分析</h2>
   <div class="card-stacked">
     <div class="card-content">
       <div class="row" id="search-area">
-        <form id="search-form" method="get" action="#" name="search-form">
-          <div class="row">
-            <div class="input-field col s6">
-              <input
-                type="text"
-                id="search-field"
-                placeholder="検索"
-                id="icon_prefix2"
-                class="materialize-textarea"
-              />
-            </div>
-            <span class="fa-stack fa-2x" id="search-btn">
-              <i class="fas fa-square fa-stack-2x"></i>
-              <i class="fas fa-search fa-stack-1x fa-inverse"></i>
-            </span>
-          </div>
+
+        <form method="get" action="#" class="search_container" name="search-form">
+          <input type="text" size="25" placeholder="会社検索" id="search-field">
+          <input type="submit" value="&#xf002" id="search-btn">
         </form>
+
       </div>
     </div>
   </div>
@@ -96,6 +89,7 @@
     const keyword = $("#search-field").val();
     let keywords = add_keyword(keyword);
     append_keyword(keywords);
+    window.location.href = "{% url 'corporateanalysis:company_information' %}";
   });
 
   var data = [

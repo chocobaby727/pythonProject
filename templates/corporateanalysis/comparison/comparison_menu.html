@@ -2,6 +2,9 @@
 {% block page_title %} 
 比較分析開始 
 {% endblock %}
+{% block extra_css %}
+<style>ul.fda li:nth-child(2){background: #111;}</style>
+{% endblock %}
 {%block content %} 
 {% include "components/_header.html" with header_title="比較分析" %}
 <div class="section">

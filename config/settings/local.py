@@ -9,7 +9,7 @@ from .base import *
 # Security settings #
 #####################
 
-DEBUG = False
+DEBUG = True
 
 # SECRET_KEY = 'secret-key'
 
@@ -45,6 +45,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 ###########

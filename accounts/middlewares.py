@@ -15,17 +15,17 @@ class SitePermissionMiddleware:
 
         return response
 
-    def process_view(self, request, view_func, view_args, view_kwargs):
-        # ビューが呼び出される直前の処理
-        has_site_permission = False
-
-        if request.user.is_superuser or request.user.is_staff:
-            has_site_permission = True
-
-        admin_index = reverse('admin:index')
-        # 権限を持っていないユーザーが「/admin/」配下にアクセスしたとき403エラー
-        if request.path.startswith(admin_index):
-            if not has_site_permission:
-                raise PermissionDenied
-
-        request.user.has_site_permission = has_site_permission
+    # def process_view(self, request, view_func, view_args, view_kwargs):
+    #     # ビューが呼び出される直前の処理
+    #     has_site_permission = False
+    #
+    #     if request.user.is_superuser or request.user.is_staff:
+    #         has_site_permission = True
+    #
+    #     admin_index = reverse('admin:index')
+    #     # 権限を持っていないユーザーが「/admin/」配下にアクセスしたとき403エラー
+    #     if request.path.startswith(admin_index):
+    #         if not has_site_permission:
+    #             raise PermissionDenied
+    #
+    #     request.user.has_site_permission = has_site_permission
