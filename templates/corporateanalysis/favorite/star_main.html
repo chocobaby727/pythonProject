@@ -7,16 +7,19 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'styles/analysis.css' %}">
 <style>ul.fda li:nth-child(3){background: #111;}</style>
+<style>.material-icons.c{color: #FFFF00;font-size: 30px;}</style>
 {% endblock %}
 
 
-{%　block content %}
+{% block content %}
 {% include "components/_header.html" with header_title="お気に入り" %}
-    <ul class="target">
-    <li><span id="star_yellow">&#9733;</span>株式会社クレスコ　　</li><hr>
-    <li><span id="star_yellow">&#9733;</span>三菱商事株式会社　　</li><hr>
-    <li><span id="star_yellow">&#9733;</span>楽天株式会社　　　　</li><hr>
-    <li><span id="star_yellow">&#9733;</span>ソニー株式会社　　　</li><hr>
+    <br>
+    <br>
+    <ul class="af">
+    <li><span id="star-color">&#9733;</span>楽天株式会社　　　　</li><hr>
+    <li><span id="star-color">&#9733;</span>三菱商事株式会社　　</li><hr>
+    <li><span id="star-color">&#9733;</span>株式会社クレスコ　　</li><hr>
+    <li><span id="star-color">&#9733;</span>ソニー株式会社　　　</li><hr>
     </ul>
 {% include "components/_bottom-app-bar.html" %}
 {% endblock %}

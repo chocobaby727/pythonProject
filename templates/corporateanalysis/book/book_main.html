@@ -3,13 +3,13 @@
 評価定義
 {% endblock %}
 {% block extra_css %}
-<link rel="stylesheet" href="../../static/styles/ensyu14.css">
 <style>ul.fda li:nth-child(4){background: #111;}</style>
+<style>.material-icons.d{color: #9400d3;font-size: 30px;}</style>
 {% endblock %}
 {%block content %}
 {% include "components/_header.html" with header_title="評価定義" %}
     <br>
-    <h3><b>総資本経常利益率（ROE）</b></h3>
+    <center><h3><b>総資本経常利益率（ROE）</b></h3>
     <font size="4">「年間の当期純利益÷自己資本の年平均」<br>
     で算出される自己資本当期純利益率は、<br>
     株主の出資分でどれくらいの配当金の<br>
@@ -17,24 +17,24 @@
     自己資本当期純利益率が高いほど、<br>
     自己資本をもとに多くの利益を獲得<br>
     していると判断できる。投資対象として<br>
-    魅力的な企業であるとも言える。</font>
+    魅力的な企業であるとも言える。</font></center>
     <br>
     <br>
     <br>
     <br>
-    <h3><b>総資本経常利益率（ROA）</b></h3>
+    <center><h3><b>総資本経常利益率（ROA）</b></h3>
     <font size="4">
     「年間の経常利益÷総資本の年平均」<br>
     で算出される総資本経常利益率は、<br>
     経営活動においてどの程度の利益を<br>
     得られたかを示す指標。総資本経常利益率が<br>
     高いほど収益性があると判断でき、<br>
-    5％以上で良好、10％以上で超優良とみなされる。</font>
+    5％以上で良好、10％以上で超優良とみなされる。</font></center>
     <br>
     <br>
     <br>
     <br>
-    <h3><b>売上高総利益率</b></h3>
+    <center><h3><b>売上高総利益率</b></h3>
     <font size="4">
     「売上総利益÷売上高」で算出される<br>
     売上高総利益率は、売上高に対する利益の<br>
@@ -43,6 +43,6 @@
     売上高総利益率が高いほど、自社の<br>
     商品・サービスが利益を生み出す力が大きい<br>
     と判断でき、低ければ仕入原価を下げる<br>
-    などの対策が求められる。</font>
+    などの対策が求められる。</font></center>
 {% include "components/_bottom-app-bar.html" %}
 {% endblock %}

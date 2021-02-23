@@ -5,9 +5,11 @@
 {% endblock %}
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'styles/button.css' %}">
-<link rel="stylesheet" href="{% static 'styles/analysis.css' %}">
 {% endblock %}
 {% block content %}
+{% include "components/_bottom-app-bar.html" %}
+<style>ul.fda li:nth-child(2){background: #111;}</style>
+<style>.material-icons.b{color: #00ff00;font-size: 30px;}</style>
 <div class="card horizontal">
   <span class="back-text"><i class="fas fa-arrow-left"></i> 戻る</span>
   <h2 class="card-header">IT</h2>
@@ -16,15 +18,17 @@
         <br>
         <center><a href="{% url 'corporateanalysis:comparison_result' %}" class="cp_btn"><h3>分析開始</h3></a>
         <br>
-        <h5>＋会社の追加</h5>
+        <h5 class="add-category" id="buttom">会社の追加
+        <i class="modal-trigger fas fa-plus" data-target="modal1"></i>
+        </h5>
         </center>
         <br>
         <ul class="lf">
-        <li>　<span id="star">&#9734;</span>富士通ゼネラル</li><hr>
-        <li>　<span id="star">&#9734;</span>ソフトバンク</li><hr>
-        <li>　<span id="star_yellow">&#9733;</span>ソニー</li><hr>
+        <li>　<span id="star-color">&#9734;</span>富士通ゼネラル</li><hr>
+        <li>　<span id="star-color">&#9734;</span>ソフトバンク</li><hr>
+        <li>　<span id="star-color">&#9733;</span>ソニー</li><hr>
         </ul>
-{% include "components/_bottom-app-bar.html" %}
+
 
 {% endblock %}
 {% block extra_js %}

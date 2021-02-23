@@ -2,6 +2,8 @@
  {% block page_title %} 
  会社分析 {% endblock %} 
  {%block content %}
+ <style>ul.fda li:nth-child(1){background: #111;}</style>
+ <style>.material-icons.a{color: #00ffff;font-size: 30px;}</style>
 <div class="card horizontal">
   <span class="back-text"><i class="fas fa-arrow-left"></i> 戻る</span>
   <h2 class="card-header">会社分析</h2>
@@ -10,11 +12,22 @@
 <div class="wrap around collection">
   <div class="collection-item">
     <div class="content">
-      <p class="float-text" id="company-name">
-        <i class="far fa-star" id="star-color"></i>ソニー株式会社
+      <p class="float-text" id="company-name_top">
+      ソニー株式会社<i class="far fa-star" id="star-color"></i>
       </p>
     </div>
   </div>
+
+<!--
+<div class="select-year"> 
+      <label>検索年度</label>
+      <select class="browser-default">
+        <option value="" disabled selected>年度を指定</option>
+        <option value="1">2019年度</option>
+        <option value="2">2018年度</option>
+        <option value="3">2017年度</option>
+      </select>
+</div>-->
 
   <div class="collection-item cursor-pointer">
     <div class="content">
@@ -42,10 +55,10 @@
     <p class="float-text company" id="statements-color">財務諸表</p>
   </div>
 </div>
-
+<br>
 <h5 class="add-category" id="buttom">
   カテゴリ追加
-  <i class="modal-trigger fas fa-plus" data-target="modal1"></i>
+<i class="modal-trigger fas fa-plus" data-target="modal1"></i>
 </h5>
 
 <div id="modal1" class="modal bottom-sheet">

@@ -2,29 +2,44 @@
 {% block page_title %}会社検索{% endblock %}
 {% block extra_css %}
 <style>ul.fda li:nth-child(1){background: #111;}</style>
+<style>.material-icons.a{color: #00ffff;font-size: 30px;}</style>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
 <div class="card horizontal">
   <h2 class="card-header">会社分析</h2>
+</div>
+<br>
+<br>
   <div class="card-stacked">
     <div class="card-content">
       <div class="row" id="search-area">
 
         <form method="get" action="#" class="search_container" name="search-form">
-          <input type="text" size="25" placeholder="会社検索" id="search-field">
+          <input type="text" size="25" placeholder="会社を検索してください" id="search-field">
           <input type="submit" value="&#xf002" id="search-btn">
         </form>
 
       </div>
     </div>
   </div>
+    
+    <br>
+    <h5 style="color:#808080">　検索履歴</h5>
+    <ul>
+    <li>　<i class="fas fa-history"></i><a href='company_information' class='target-link black-text'>株式会社クレスコ　　　</a>
+        <i class="fas fa-times"></i></li><hr>
+    <li>　<i class="fas fa-history"></i><a href='company_information' class='target-link black-text'>三菱商事株式会社　　　</a>
+        <i class="fas fa-times"></i></li><hr>
+    <li>　<i class="fas fa-history"></i><a href='company_information' class='target-link black-text'>楽天株式会社　　　　　</a>
+        <i class="fas fa-times"></i></li><hr>
+    </ul>
 
   <div id="parent"></div>
 
   <div class="hidden" id="child"></div>
 
-</div>
+
 
 {% include "components/_bottom-app-bar.html" %}
 {% endblock %}
@@ -72,7 +87,7 @@
                             <div class='card-action'>
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <i class="fas fa-history"></i><a href='#' class='target-link black-text'>  ${keywords[i]}</a>
+                                <i class="fas fa-history"></i><a href='#' class='target-link black-text'>  ${keywords[i]}</a>
                                 </div>
                                 <i class="fas fa-times"></i>
                               </div>
@@ -163,7 +178,7 @@
       var item = $("#child").append(`
                           <div class="search-history">
                             <div class='card-action'>
-                              <div class="row">
+                              <div class="row hob">
                                 <div class="input-field col s12">
                                   <a href='#' class='target-link black-text'>  ${v}</a>
                                 </div>

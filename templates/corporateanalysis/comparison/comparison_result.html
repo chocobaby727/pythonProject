@@ -4,19 +4,21 @@
 比較結果
 {% endblock %}
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'styles/ensyu14.css' %}">
+<style>ul.fda li:nth-child(2){background: #111;}</style>
+<style>.material-icons.b{color: #00ff00;font-size: 30px;}</style>
 {% endblock %}
 {%block content %}
+
 <div class="card horizontal">
   <span class="back-text"><i class="fas fa-arrow-left"></i> 戻る</span>
   <h2 class="card-header">IT</h2>
  <center><h4>収益性ランキングTOP3</h4><center>
     <table>
         <tr>
-            <th>評価名</th>
-            <th>富士通<br>ゼネラル</th>
-            <th>ソフト<br>バンク</th>
-            <th>ソニー</th>
+            <th class="value">評価名</th>
+            <th class="value">富士通<br>ゼネラル</th>
+            <th class="value">ソフト<br>バンク</th>
+            <th class="value">ソニー</th>
         </tr>
 
         <tr>
@@ -81,10 +83,10 @@
     <center><h4>成長性ランキングTOP3</h4><center>
     <table>
         <tr>
-            <th>評価名</th>
-            <th>富士通<br>ゼネラル</th>
-            <th>ソフト<br>バンク</th>
-            <th>ソニー</th>
+            <th class="value">評価名</th>
+            <th class="value">富士通<br>ゼネラル</th>
+            <th class="value">ソフト<br>バンク</th>
+            <th class="value">ソニー</th>
         </tr>
 
         <tr>
@@ -138,7 +140,6 @@
     <center><h5>3位：富士通ゼネラル</h5><center>
 {% include "components/_bottom-app-bar.html" %}
 {% endblock %}
-
 {% block extra_js %}
 <script>
     $(function() {
@@ -148,7 +149,7 @@
         });
 
         // trの偶数行にevenクラス設定
-        $("tr:nth-child(even)").addClass("even");
+        $("tr:nth-child(even)").addClass("eve");
 
         // 先頭行以外のtrがマウスオーバーしたとき
         // hoverクラス追加

@@ -4,6 +4,7 @@
 {% endblock %}
 {% block extra_css %}
 <style>ul.fda li:nth-child(2){background: #111;}</style>
+<style>.material-icons.b{color: #00ff00;font-size: 30px;}</style>
 {% endblock %}
 {%block content %} 
 {% include "components/_header.html" with header_title="比較分析" %}
@@ -17,16 +18,16 @@
 <div id="add-category-modal" class="modal modal-fixed-footer">
   <div class="modal-content">
     <h4>カテゴリー追加</h4>
-    <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Color</a>
+    <a class="dropdown-trigger btn" href="#" data-target="dropdown1">色の選択</a>
     <ul id="dropdown1" class="dropdown-content">
-          <li class="collection-item">blue</li>
-          <li class="collection-item active">green</li>
-          <li class="collection-item">red</li>
+          <li class="collection-item">青色</li>
+          <li class="collection-item active">緑</li>
+          <li class="collection-item">赤</li>
     </ul>
 
     <div class="input-field col s12">
       <textarea class="materialize-textarea"></textarea>
-      <label for="icon_prefix2">category</label>
+      <label for="icon_prefix2">カテゴリー名</label>
     </div>
   </div>
 
